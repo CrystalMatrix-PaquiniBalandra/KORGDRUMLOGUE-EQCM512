@@ -1,87 +1,92 @@
-# KORGDRUMLOGUE-EQCM512.V.2.0.
-KORG DRUMLOGUE-CRYSTALMATRIX EQ 
+**Language:** English | [Español](README.es.md) | [Français](README.fr.md) | [日本語](README.ja.md) | [中文](README.zh.md) | [Deutsch](README.de.md)
 
+# KORGDRUMLOGUE-EQCM512.V.2.0
 
-# Free EQCM512, V.2.0 — 4-Band Parametric EQ (Korg drumlogue)
+## KORG DRUMLOGUE - CRYSTALMATRIX EQ
+### Free EQCM512, V.2.0 — 4-Band Parametric EQ (Korg drumlogue)
 
-**Desarrollado por CrystalMatrix aka Paquini Balandra**
+**Developed by CrystalMatrix aka Paquini Balandra**
 
-Es un ecualizador paramétrico estéreo de 4 bandas específicamente diseñado y emulado para la plataforma **logue SDK** de **Korg drumlogue**. Permite esculpir el espectro de frecuencias graves, medias graves, medias agudas y agudas; además incluye controles independientes de ganancia de entrada, salida y mezcla paralela (**Dry & Wet**).
-
----
-
-## CARACTERÍSTICAS
-
-1. **Procesamiento estéreo completo:** incluye suavizado de parámetros libre de clics, brincos y pops.
-2. **4 bandas de ecualización independientes:** L.F. (*Low Frequency*), L.M.F. (*Low-Mid Frequency*), H.M.F. (*High-Mid Frequency*) y H.F. (*High Frequency*).
-3. **Control de etapa de ganancia:** ajuste de ganancia de entrada (`INPUT`) y salida (`OUTPUT`), con un margen de `-20.0 dB` hasta `+20.0 dB`.
-4. **Mezcla paralela:** incluye controles dedicados para señal procesada (`WET`) y señal original (`DRY`).
+A 4-band stereo parametric equalizer specifically designed and emulated for the **Korg drumlogue** **logue SDK** platform. It allows you to sculpt the frequency spectrum across lows, low-mids, high-mids, and highs; it also includes independent input and output gain controls, as well as parallel mixing (**Dry & Wet**).
 
 ---
 
-## INSTALACIÓN EN KORG DRUMLOGUE
+## FEATURES
 
-1. Descarga el archivo del plugin compilado (`.drmlgunit`) desde la sección **Releases** de este repositorio.
-2. Conecta tu **Korg drumlogue** a tu computadora mediante USB en modo almacenamiento (*Storage Mode*).
-3. Copia el archivo `.drmlgunit` dentro de la carpeta correspondiente a efectos (`Units/MasterFX` o `Units/ModFX`, según la compilación).
-4. Expulsa la unidad de forma segura y reinicia el sintetizador.
-
----
-
-## PARÁMETROS Y CONTROLES
-
-### ETAPA DE ENTRADA Y MEZCLA — *Primera ventana en drumlogue*
-
-| Parámetro | Etiqueta | Rango | Valor por defecto | Descripción |
-| :--- | :--- | :--- | :--- | :--- |
-| **Input Gain** | `INPUT` | `-20.0 dB` a `+20.0 dB` | `0.0 dB` | Ajusta el nivel de la señal antes de entrar a las bandas de ecualización. |
-| **Wet Level** | `WET` | `0.0` a `10.0` | `10.0` | Nivel de volumen de la señal ya ecualizada. |
-| **Dry Level** | `DRY` | `0.0` a `10.0` | `0.0` | Nivel de volumen de la señal limpia sin procesar (útil para ecualización paralela). |
-| **Output Gain** | `OUTPUT` | `-20.0 dB` a `+20.0 dB` | `0.0 dB` | Controla el nivel final de salida del efecto. |
+* **Full stereo processing:** Includes parameter smoothing free of clicks, jumps, and pops.
+* **4 independent EQ bands:** L.F. (*Low Frequency*), L.M.F. (*Low-Mid Frequency*), H.M.F. (*High-Mid Frequency*), and H.F. (*High Frequency*).
+* **Gain staging control:** Independent input (`INPUT`) and output (`OUTPUT`) gain adjustments, ranging from `-20.0 dB` to `+20.0 dB`.
+* **Parallel mixing:** Dedicated controls for the processed signal (`WET`) and the original dry signal (`DRY`).
 
 ---
 
-### BANDAS DE ECUALIZACIÓN
+## INSTALLATION ON KORG DRUMLOGUE
 
-#### 1. Banda Grave — L.F. (*Low Frequency*) — *Segunda ventana*
-Ideal para dar peso al bombo (*kick*) o limpiar frecuencias subgraves (*Low Shelf*).
-
-| Parámetro | Etiqueta | Rango | Valor por defecto | Descripción |
-| :--- | :--- | :--- | :--- | :--- |
-| **Frecuencia** | `FRQLF` | `20 Hz` – `400 Hz` | `100 Hz` | Frecuencia de corte del filtro *Low Shelf*. |
-| **Resonancia / Q** | `QLF` | `0.107` – `2.507` | `0.707` | Controla la pendiente y resonancia de la curva. |
-| **Ganancia** | `GLF` | `-15.0 dB` a `+15.0 dB` | `0.0 dB` | Atenúa o realza las frecuencias graves. |
-
-#### 2. Banda Media-Grave — L.M.F. (*Low-Mid Frequency*) — *Tercera ventana*
-Útil para controlar el cuerpo de la caja (*snare*), toms o eliminar resonancias acartonadas (*Peak / Bell*).
-
-| Parámetro | Etiqueta | Rango | Valor por defecto | Descripción |
-| :--- | :--- | :--- | :--- | :--- |
-| **Frecuencia** | `FRQLMF` | `100 Hz` – `2000 Hz` | `700 Hz` | Frecuencia central de la campana. |
-| **Ancho de banda / Q** | `QLMF` | `0.107` – `2.507` | `0.707` | Valores bajos afectan un rango amplio; valores altos son más quirúrgicos. |
-| **Ganancia** | `GLMF` | `-15.0 dB` a `+15.0 dB` | `0.0 dB` | Atenúa o realza alrededor de la frecuencia seleccionada. |
-
-#### 3. Banda Media-Aguda — H.M.F. (*High-Mid Frequency*) — *Cuarta ventana*
-Enfocada en la presencia, el ataque de las baquetas y la definición de los sintetizadores (*Peak / Bell*).
-
-| Parámetro | Etiqueta | Rango | Valor por defecto | Descripción |
-| :--- | :--- | :--- | :--- | :--- |
-| **Frecuencia** | `FRQHMF` | `400 Hz` – `8000 Hz` | `2500 Hz` | Frecuencia central de la campana. |
-| **Ancho de banda / Q** | `QHMF` | `0.107` – `2.507` | `0.707` | Controla la amplitud de la campana. |
-| **Ganancia** | `GHMF` | `-15.0 dB` a `+15.0 dB` | `0.0 dB` | Atenúa o realza la zona media-aguda. |
-
-#### 4. Banda Aguda — H.F. (*High Frequency*) — *Quinta ventana*
-Añade aire y brillo a platillos (*hi-hats*), platos y colas de reverberación (*High Shelf*).
-
-| Parámetro | Etiqueta | Rango | Valor por defecto | Descripción |
-| :--- | :--- | :--- | :--- | :--- |
-| **Frecuencia** | `FRQHF` | `1000 Hz` – `20000 Hz` | `10000 Hz` | Frecuencia de corte del filtro *High Shelf*. |
-| **Resonancia / Q** | `QHF` | `0.107` – `2.507` | `0.707` | Controla la pendiente de transición hacia los agudos. |
-| **Ganancia** | `GHF` | `-15.0 dB` a `+15.0 dB` | `0.0 dB` | Atenúa o realza las frecuencias altas. |
+1. Download the compiled plugin file (`.drmlgunit`) from the **Releases** section of this repository.
+2. Connect your **Korg drumlogue** to your computer via USB in **Storage Mode**.
+3. Copy the `.drmlgunit` file into the corresponding effects folder (`Units/MasterFX` or `Units/ModFX`, depending on the build).
+4. Safely eject the drive and restart the synthesizer.
 
 ---
 
-## FLUJO DE LA SEÑAL
+## PARAMETERS & CONTROLS
+
+### INPUT & MIX STAGE — *First Page on drumlogue*
+
+| Parameter | Label | Range | Default | Description |
+| :--- | :--- | :--- | :--- | :--- |
+| **Input Gain** | `INPUT` | `-20.0 dB` to `+20.0 dB` | `0.0 dB` | Adjusts the signal level before entering the EQ bands. |
+| **Wet Level** | `WET` | `0.0` to `10.0` | `10.0` | Output volume level of the equalized signal. |
+| **Dry Level** | `DRY` | `0.0` to `10.0` | `0.0` | Output volume level of the clean, unprocessed signal (useful for parallel EQ). |
+| **Output Gain** | `OUTPUT` | `-20.0 dB` to `+20.0 dB` | `0.0 dB` | Controls the final output level of the effect. |
+
+---
+
+## EQUALIZATION BANDS
+
+### 1. Low Band — L.F. (Low Frequency) — *Second Page*
+
+Ideal for adding weight to the kick drum or cleaning up sub-bass frequencies (*Low Shelf*).
+
+| Parameter | Label | Range | Default | Description |
+| :--- | :--- | :--- | :--- | :--- |
+| **Frequency** | `FRQLF` | `20 Hz` – `400 Hz` | `100 Hz` | Cutoff frequency of the Low Shelf filter. |
+| **Resonance / Q** | `QLF` | `0.107` – `2.507` | `0.707` | Controls the slope and resonance of the curve. |
+| **Gain** | `GLF` | `-15.0 dB` to `+15.0 dB` | `0.0 dB` | Cuts or boosts low frequencies. |
+
+### 2. Low-Mid Band — L.M.F. (Low-Mid Frequency) — *Third Page*
+
+Useful for controlling the body of the snare, toms, or removing boxy resonances (*Peak / Bell*).
+
+| Parameter | Label | Range | Default | Description |
+| :--- | :--- | :--- | :--- | :--- |
+| **Frequency** | `FRQLMF` | `100 Hz` – `2000 Hz` | `700 Hz` | Center frequency of the bell filter. |
+| **Bandwidth / Q** | `QLMF` | `0.107` – `2.507` | `0.707` | Lower values affect a wider range; higher values are more surgical. |
+| **Gain** | `GLMF` | `-15.0 dB` to `+15.0 dB` | `0.0 dB` | Cuts or boosts around the selected frequency. |
+
+### 3. High-Mid Band — H.M.F. (High-Mid Frequency) — *Fourth Page*
+
+Focused on presence, stick attack, and synthesizer definition (*Peak / Bell*).
+
+| Parameter | Label | Range | Default | Description |
+| :--- | :--- | :--- | :--- | :--- |
+| **Frequency** | `FRQHMF` | `400 Hz` – `8000 Hz` | `2500 Hz` | Center frequency of the bell filter. |
+| **Bandwidth / Q** | `QHMF` | `0.107` – `2.507` | `0.707` | Controls the width of the bell curve. |
+| **Gain** | `GHMF` | `-15.0 dB` to `+15.0 dB` | `0.0 dB` | Cuts or boosts the high-mid frequency range. |
+
+### 4. High Band — H.F. (High Frequency) — *Fifth Page*
+
+Adds air and shimmer to hi-hats, cymbals, and reverb tails (*High Shelf*).
+
+| Parameter | Label | Range | Default | Description |
+| :--- | :--- | :--- | :--- | :--- |
+| **Frequency** | `FRQHF` | `1000 Hz` – `20000 Hz` | `10000 Hz` | Cutoff frequency of the High Shelf filter. |
+| **Resonance / Q** | `QHF` | `0.107` – `2.507` | `0.707` | Controls the transition slope toward the highs. |
+| **Gain** | `GHF` | `-15.0 dB` to `+15.0 dB` | `0.0 dB` | Cuts or boosts high frequencies. |
+
+---
+
+## SIGNAL FLOW
 
 ```text
 [ADC IN] ──> [INPUT GAIN] ──┬──> [LF] ──> [LMF] ──> [HMF] ──> [HF] ──> [WET GAIN] ──┐
@@ -91,16 +96,13 @@ Añade aire y brillo a platillos (*hi-hats*), platos y colas de reverberación (
 
 ---
 
-## DESARROLLO Y COMPILACIÓN
+## DEVELOPMENT & COMPILATION
 
-Esta emulación fue desarrollada en **Pure Data**, **PlugData** y la librería **Heavylib** por **CrystalMatrix aka Paquini Balandra**, y compilada utilizando **Heavy Compiler (`hvcc`)**, el **logue SDK** de Korg y la herramienta web de conversión [boochow pd2drumlogue](https://app.boochow.com/pd2drumlogue/).
+This emulation was developed in **Pure Data**, **PlugData**, and the **Heavylib** library by **CrystalMatrix aka Paquini Balandra**, and compiled using **Heavy Compiler (`hvcc`)**, the **Korg logue SDK**, and the web conversion tool **boochow pd2drumlogue**.
 
 ---
 
-## CRÉDITOS Y LICENCIA
+## CREDITS & LICENSE
 
-* **Autor / Emulación:** CrystalMatrix aka Paquini Balandra
-* **Licencia:** Este proyecto se distribuye bajo la licencia **MIT**. Consulta el archivo `LICENSE` para más detalles.
-
-
-
+* **Author / Emulation:** CrystalMatrix aka Paquini Balandra
+* **License:** This project is distributed under the **MIT License**. See the `LICENSE` file for more details.
